@@ -1,0 +1,23 @@
+/*
+	POST : /target
+	Mercenary Target Registration Payload
+	---------------------------------------------------------------------------
+	Sends the host and port the target is listening on, environment key-value
+	pairs, and available plugins along with optional plugin versions.
+*/
+
+{
+	"host" : "localhost:6464",
+
+	"environment" :
+	{
+		"video-card" : "NVidia",
+		"windows"    : "7"
+	},
+
+	"plugins" :
+	{
+		"task-plugin-type-a" : "optional-task-plugin-version",
+		"task-plugin-type-b" : "optional-task-plugin-version"
+	}
+}

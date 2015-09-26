@@ -1,0 +1,31 @@
+/*
+	POST : /task/assign
+	Mercenary Target Task Assignment Payload
+	---------------------------------------------------------------------------
+	The type value will be used to find the right plugin to use to accomplish
+	the task.  However, the entire payload should be sent to the plugin.
+
+	The task-plugin-type key is a placeholder for an actual plugin, and should
+	be replaced (e.g., "ranorex").  This is the part that will be used by the
+	plugin to know how to execute the task.
+
+	Report plugin specific key-value pairs can also be sent along with each
+	task, and will be returned - unchanged - along with the task execution
+	result.
+*/
+
+{
+	"type" : "task-plugin-type-a",
+
+	"id" : "1", // example report plugin specific key-value pair
+
+	"environment" :
+	{
+		"environment-key" : "environment-key-value"
+	},
+
+	"task-plugin-type-a" :
+	{
+		"plugin-specific-key" : "plugin-specific-key-value"
+	}
+}

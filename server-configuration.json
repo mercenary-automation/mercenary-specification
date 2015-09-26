@@ -1,0 +1,29 @@
+/*
+	Mercenary Server Configuration File
+	---------------------------------------------------------------------------
+	In the absense of a configuration file, the role should default to 'server'
+	and the port should default to '6565'.
+
+	These values can also be omitted from configuration file and the same
+	defaults should apply.
+
+	The plugins section is also optional, as by default the server will make
+	all reporting plugins available.  A section need only apply if the plugin
+	requires it or the default values of that plugin need to be modified.
+*/
+
+{
+	"role" : "server",
+	"port" : "6565",
+
+	"plugins" :
+	{
+		// This value should match the 'report' value in a task-list request
+		"report-plugin-type" :
+		{
+			// The key-value pairs for any given plugin are specified by the
+			// plugins authors
+			"type-key" : "type-key-value"
+		}
+	}
+}

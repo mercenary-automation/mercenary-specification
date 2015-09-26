@@ -1,0 +1,33 @@
+/*
+	POST : /task/complete
+	Mercenary Server Task Complete Payload
+	---------------------------------------------------------------------------
+	Report plugin specific key-value pairs can also be sent along with each
+	task, and will be returned - unchanged - along with the task execution
+	result.
+*/
+
+{
+	"type" : "task-plugin-type-a",
+	"result" : "pass|fail|skip",
+
+	"id" : "1", // example report plugin specific key-value pair
+
+	"environment" :
+	{
+		"environment-key" : "environment-key-value",
+		"plugin-added-key" : "plugin-added-key-value"
+	},
+
+	"task-plugin-type-a" :
+	{
+		"plugin-specific-key" : "plugin-specific-key-value",
+		"plugin-added-key" : "plugin-added-key-value"
+	},
+
+	"attachments" :
+	{
+		"file-name-1.ext" : "Base64Encoded binary file or plain text",
+		"file-name-2.ext" : "Base64Encoded binary file or plain text"
+	}
+}

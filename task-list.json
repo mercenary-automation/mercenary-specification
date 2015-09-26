@@ -1,0 +1,53 @@
+/*
+	POST : /tasks
+	Mercenary Server Task List Payload
+	---------------------------------------------------------------------------
+	The type and and environment values will be used to find a suitable target
+	to execute the task.
+
+	The task-plugin-type key is a placeholder for an actual plugin, and should
+	be replace (e.g., "ranorex").  This is the part that will get sent to the
+	plugin so that it knows how to execute the task.
+
+	Report plugin specific key-value pairs can also be sent along with each
+	task, and will be returned - unchanged - along with the task execution
+	result.
+*/
+
+{
+	"report" : "report-plugin-type",
+
+	"tasks" :
+	[
+		{
+			"type" : "task-plugin-type-a",
+
+			"id" : "1", // example report plugin specific key-value pair
+
+			"environment" :
+			{
+				"environment-key" : "environment-key-value"
+			},
+
+			"task-plugin-type-a" :
+			{
+				"plugin-specific-key" : "plugin-specific-key-value"
+			}
+		},
+		{
+			"type" : "task-plugin-type-b",
+
+			"id" : "2", // example report plugin specific key-value pair
+
+			"environment" :
+			{
+				"environment-key" : "environment-key-value"
+			},
+
+			"task-plugin-type-b" :
+			{
+				"plugin-specific-key" : "plugin-specific-key-value"
+			}
+		}
+	]
+}

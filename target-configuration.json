@@ -1,0 +1,46 @@
+/*
+	Mercenary Target Configuration File
+	---------------------------------------------------------------------------
+	Host is required, as this value that will be sent during registration for
+	tasks to be assigned to the target.  In the absense of a value for 'port',
+	the default for target is '6464'.
+
+	A registration url is optional.  However, if none is found then the target
+	will not show up on the dashboard of any server, and any task sent to the
+	target will be required to provide a uri to report it's results to.
+
+	The environment section is optional, but will allow the server to only send
+	task assignments that requires the environment provided.  These key/value
+	pairs can be any string value, as they are not validated, only used to do
+	environment matches.
+
+	The plugins section is not optional.  The target will only complete tasks
+	using plugins for which a valid configuration exists.  However, key-value
+	pairs are not required unless dictated by the plugin or to modify a
+	default value.
+*/
+
+{
+	"role" : "target",
+	"host" : "localhost",
+	"port" : "6464",
+
+	"registration-url" : "localhost:6565",
+
+	"environment" :
+	{
+		"video-card" : "NVidia",
+		"windows"    : "7"
+	},
+
+	"plugins" :
+	{
+		// This value should match the 'type' value in a task-assignment request
+		"task-plugin-type" :
+		{
+			// The key-value pairs for any given plugin are specified by the
+			// plugins authors
+			"type-key" : "type-key-value"
+		}
+	}
+}
